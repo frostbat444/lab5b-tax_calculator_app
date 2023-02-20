@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tax Calculator App</title>
+    <link rel="stylesheet" href="tax_calc.css">
+    <script>
+        "use strict";
+        var $ = function (id) {
+            return document.getElementById(id);
+        };
+        var calculateTax = function (saleAmount, taxPercent) {
+            var tax = (saleAmount + ((taxPercent / 100) * saleAmount));
+            tax = tax.toFixed(2);
+            return "$" + tax;
+        };
+        var processEntries = function () {
+            var saleAmount = parseFloat($("saleAmount").value);
+            var taxPercent = parseFloat($("taxPercent").value);
+
+            if (isNaN(saleAmount) || isNaN(taxPercent)) {
+                alert("Please enter a number.");
+            } else if (saleAmount <= 0 || taxPercent <= 0) {
+                alert("Both entries must be greater than 0.");
+            } else {
+                $("tax").value = calculateTax(saleAmount, taxPercent);
+                $("saleAmount").focus();
+            }
+        };
+        window.onload = function () {
+            $("calculate").onclick = processEntries;
+        };
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Calculate Tax</h1>
+        <label for="saleAmount">Sale Amount:</label>
+        <input type="text" id="saleAmount"><br>
+        <label for="taxPercent">Tax Percent:</label>
+        <input type="text" id="taxPercent"><br>
+        <label for="tax">Total:</label>
+        <input type="text" id="tax" disabled><br>
+        <label>&nbsp;</label>
+        <input type="button" id="calculate" value="Calculate Tax"><br>
+    </main>
+</body>
+
+</html>

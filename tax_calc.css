@@ -1,0 +1,27 @@
+article, aside, figure, footer, header, main, nav, section { display: block; }
+
+body { font-family:'Courier New', Courier, monospace;
+       font-weight: bold;
+       background-color: rgb(179, 210, 226);
+       margin: 0 auto;
+       margin-top: 50px;
+       width: 500px;
+       border: 3px solid rgb(0, 162, 255);
+       padding-top: 10px ; }
+
+main { padding: 0 2em 1em; }
+
+h1 { color: rgb(0, 162, 255); 
+     text-align: center; 
+     font-weight: 900; 
+     font-size: 50px; }
+
+label { float: left;
+        width: 11em;
+        text-align: center;
+        padding-bottom: .5em; }
+
+input { margin-left: 1em;
+        margin-bottom: .5em; }
+
+#mpg { background-color: #696161; }
